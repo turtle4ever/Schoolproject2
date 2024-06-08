@@ -72,7 +72,7 @@ int casesout ( )
     cout << "7. Care sunt statiile fara alte conexiuni ale unei statii? \n" ;
     cout << "8. Care sunt liniile izolate? \n" ;
     cout << "9. Care doua linii au cele mai multe statii comune? \n" ;
-    cout << "0. Cate statii comune are linia a cu b? \n" ;
+    cout << "0. Cate statii comune are linia a cu b? \n" ;//done
     cout << "Press the number of the case to access it or space to exit \n" ;
 }
 

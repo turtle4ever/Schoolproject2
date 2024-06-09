@@ -22,14 +22,15 @@ ifstream linin ( "LINII.in" ) ;
 int n , m ;
 
 //matrice adiacenta
-int ma [ 3500 ] [ 3500 ] ;
+int ma [ 1001 ] [ 1001 ] ;
 
 //linii si statii de autobuz
 struct linii
 {
     int linie ;
     int numstatii ;
-    char statii [ 52 ] [ 40 ] ;
+    char statii [ 46 ] [ 50 ] ;
+    int statiiid [ 46 ] ;
 } linii [ 150 ] ;
 
 // citire matrice adiacenta
@@ -53,6 +54,8 @@ int readl ( )
         linin >> linii [ i ] .numstatii ;
         for ( j = 0 ; j < linii [ i ] .numstatii ; j ++ )
             linin >> linii [ i ] .statii [ j ] ;
+        for ( j = 0 ; j < linii [ i ] .numstatii ; j ++ )
+            linin >> linii [ i ] .statiiid [ j ] ;
     }
 }
 

@@ -1,0 +1,115 @@
+22
+1 45 Șura_Mare Cimitirul_Șerban_Vodă Opriș_Ilie Bd._Constantin_Brâncoveanu Huși Piața_Sudului Pridvorului Pasaj_Mihai_Bravu Pod_Mihai_Bravu Peneș_Curcanul Calea_Vitan Laborator Calea_Dudești Baba_Novac Gheorghe_Petrașcu Piata_Hurmuzachi Vatra_Luminoasă Piața_Iancului Bulevardul_Ferdinand Bucur_Obor Lizeanu Dr._Grozovici Vasile_Lascăr Stadion_Dinamo Calea_Dorobanților Roma Pasaj_Victoria Piața_Victoriei Dr._Felix Bulevardul_Banu_Manta Pasajul_Basarab Pod_Grozăvești Bulevardul_Iuliu_Maniu Bulevardul_Timișoara Piața_Danny_Huwe Cartier_Panduri Calea_13_Septembrie Inox Calea_Rahovei Spătarul_Preda Șoseaua_Viilor Ștefan_Hepiteș Piața_Eroii_Revoluției Cimitirul_Șerban_Vodă Șoseaua_Giurgiului
+
+3 12 Piata_Presei Universitatea_Romano-Americana Bd._Expozitiei_Grivita Bd._Ion_Mihalache Carpati Soseaua_Chitilei Navigatiei Minerva Crinului Subcetate Mezes
+
+7 17 Piata_Unirii 11_Iunie Gramont Parcul_Carol_I Autogara_Filaret Soseaua_Viilor Stefan_Hepites Sura_Mare Muzeul_Bacovia Piata_Progresul Toporasi Drumul_Gazarului Cimitirul_Evreiesc Luica Anghel_Nutu Cap._Raducanu_Cristea C.F.R._Progresul
+
+10 14 Sura_Mare Stefan_Hepites Dr._Constantin_Istrati Spatarul_Preda Calea_Rahovei Inox Calea_13_Septembrie Cartier_Panduri Piata_Danny_Huwe Bd._G Ral_Paul_Teodorescu Bd._Iuliu_Maniu POD_Grozăvești Pasajul_Basarab Bd._Banu_Manta
+
+11 29 Zetarilor Valtoarei Vadul_Nou Piata_Ferentari Sulitei Armistitiului Cibinului Soseaua_Salaj Calea_Ferentari Calea_Rahovei Inox Calea_13_Septembrie Cartier_Panduri Piata_Danny_Huwe Bd._G-Ral_Paul_Teodorescu Bd._Iuliu_Maniu POD_Grozăvești Calea_Plevnei Spitalul_Panait_Sarbu Opera_Comica_Pentru_Copii Cimitirul_Calvin George_Valsan Bd._Constructorilor Godeni Piata_Giulesti Copsa_Mica Institutul_Pasteur Drumul_La_Rosu Cartier_16_Februarie
+
+14 13 Piata_Sf._Vineri Alexandru_Sihleanu Hala_Traian Bd._Pache_Protopopescu Horei Soseaua_Mihai_Bravu Soseaua_Pantelimon Cimitirul_Armenesc Soseaua_Iancului Bd._Chisinau Soseaua_Morarilor Spitalul_Sf._Pantelimon Pantelimon
+
+16 23 Platforma_Industriala_Pipera Electronica Rocin Gelcap Soseaua_Fabrica_De_Glucoza Strandul_Tei Lacul_Tei Bd._Lacul_Tei Grigore_Moisil Alexandru_Cel_Bun Reinvierii Soseaua_Stefan_Cel_Mare Soseaua_Colentina Toamnei Bucur_Obor Mihai_Eminescu Piata_Gemeni Maria_Rosetti Batistei Bd._Carol_I Hristo_Botev Piata_Sf._Gheorghe Piata_Sf._Vineri
+
+17 14 Bd._Lacul_Tei Grigore_Moisil Alexandru_Cel_Bun Reinvierii Soseaua_Stefan_Cel_Mare Toamnei Mihai_Eminescu Piata_Gemeni Maria_Rosetti Batistei Bd._Carol_I Hristo_Botev Piata_Sf._Gheorghe Piata_Sf._Vineri
+
+19 41 Zetarilor Baciului Cimitirul_Progresul Soseaua_Giurgiului Cimitirul_Evreiesc Drumul_Gazarului Toporasi Piata_Progresul Muzeul_Bacovia Sura_Mare Cutitul_De_Argint Adesgo Colegiul_National_Gh._Sincai Verzisori Univ._Crestina_Dimitrie_Cantemir Scoala_Generala_81 Papazoglu Bd._Octavian Goga Posta_Vitan Piata_Vitan Bucuresti-Mall Zizin Calea_Vitan Laborator Calea_Dudesti Soseaua_Mihai_Bravu Dristorului Piata_Ramnicu_Sarat Soseaua_Campia_Libertatii POD_Lacuri Bd._Nicolae_Grigorescu Barajul_Dunarii Liviu_Rebreanu Postavarului Oficiul_Postal_72 Ozana I.O.R._2 Stirom Policolor Chimopar
+
+21 14 Piata_Sf._Gheorghe Hristo_Botev Bd._Carol_I Mihai_Eminescu Bucur_Obor Ziduri_Mosi Teiul_Doamnei Doamna_Ghica Raul_Colentina Cartier_Colentina Sportului Cornisor Nicolae_Canea Pasaj_Colentina
+
+23 31 Zețarilor Vâltoarei Vadul_Nou Piața_Ferentari Suliței Armistițiului Cibinului Șoseaua_Sălaj Calea_Ferentari Șoseaua_Progresului Piața_Chirigiu Piața_Regina_Maria 11_Iunie_/_Patriarhia_Română Gramont Parcul_Carol_I Bulevardul_Dimitrie_Cantemir Pasaj_Mărășești Nerva_Traian Oficiul_Postal_72 Policlinica_Vitan Depoul_Dudești Șoseaua_Mihai_Bravu Dristorului Piața_Râmnicu_Sărat Șoseaua_Câmpia_Libertății POD_Lacuri Bd._Nicolae_Grigorescu Barajul_Dunării Bd._1_Decembrie_1918 Liviu_Rebreanu Faur_Poarta_4
+
+24 21 Zețarilor Piața_Ferentari Toporași Coștila Cartier_Progresul Bacovia Piața_Eroii_Revoluției Șura_Mare Piața_Sudului CFR_Progresul Bd._Constantin_Brâncoveanu Piața_Timpuri Noi Bd._Mărășești Bd._Octavian Goga Baba_Novac Parcul_Titan Bd._1_Decembrie 1918 Liviu_Rebreanu Bd._Nicolae_Grigorescu Titan_(fosta_Republica) Faur_Poarta_4
+
+25 24 Depoul_Militari Lujerului Virtuții Pasaj_Lujerului Bd._Iuliu Maniu Bd._Geniului Cotroceni Gara_Cotroceni Răzoare Bd._Vasile Milea Bd._Timișoara Bd._Ghencea Panduri Drumul_Taberei Piața_Drumul_Taberei Bd._13_Septembrie Academia_Militară Palatul_Parlamentului Parcul_Carol_I Șoseaua_Progresului Piața_Chirigiu Calea_Rahovei Strada_Bărbătești Depoul_Alexandria
+
+27 28 Piața_Unirii Calea_Moșilor Ferdinand_I Șoseaua_Mihai_Bravu Baba_Novac Dristorului Calea_Dudești Șoseaua_Vitan-Bârzești Vitan Policlinica_Vitan Poșta_Vitan Nerva_Traian Bd._Octavian_Goga Pasaj_Mărășești Bd._Dimitrie_Cantemir Parcul_Carol_I 11_Iunie Chirigiu Calea_Rahovei Piața_Chirigiu Șoseaua_Progresului Eroii_Revoluției CFR_Progresul Piața_Sudului Bd._Constantin_Brâncoveanu Piața_Eroii_Revoluției Parcul_Tineretului Piața_Unirii
+
+32 21 Depoul_Alexandria 11_Iunie Zețarilor Piața_Ferentari Coștila Sebastian Drumul_Sării Gara_Progresul Petre_Ispirescu Bd._George Coșbuc Petre_Ispirescu Calea_Rahovei Strada_Bărbătești Calea_Rahovei_(Piața Chirigiu) Calea_Rahovei_(Piața Regina Maria) Piața_Regina_Maria Parcul_Carol_I 11_Iunie_/_Chirigiu Parcul_Carol_I_/_Bd._Dimitrie Cantemir 11_Iunie_/_Bd._Dimitrie_Cantemir Piața_Unirii
+
+
+36 18 Republica_Pipera Platforma_Pipera Pipera Șoseaua_Petricani Lac_Pipera Pasaj_Pipera Stația_Metro_Aurel_Vlaicu Floreasca Bd._Barbu_Văcărescu Șoseaua_Ștefan_cel_Mare Stația_Metro_Obor Lizeanu Pache_Protopopescu Piața_Iancului Maior_Coravu Șoseaua_Mihai_Bravu Baicului
+
+40 26 Piața_Sfânta_Vineri Piața_Sfântul_Gheorghe Piața_Unirii Piața_Unirii_2 Piața_Unirii_1 Piața_Națiunile Unite Stația_Izvor Stația_Operă Piața_Eroilor Stația_Academia_Militară Piața_Arsenalului Stația_Palatul_Parlamentului Piața_Constituției Stația_Parcul_Carol_I Piața_Regina_Maria Stația_Chirigiu Piața_Chirigiu Calea_Rahovei_(Piața_Chirigiu) Stația_Șoseaua_Progresului Bd._George_Coșbuc Stația_Petre_Ispirescu Stația_Drumul_Sării Stația_Gara_Progresul Stația_Coștila Piața_Ferentari Zețarilor
+
+41 20 Gara_Basarab Bd._Dinicu_Golescu Bd._Regiei Pasaj_Basarab Bd._Vasile_Milea Grozăvești Bd._Iuliu_Maniu Piața_Leul Răzoare Pod_Cotroceni Pod_Eroilor Opera_Națională Piața_Operei Bd._Mihail_Kogălniceanu Stația_Universitate Piața_Universității Bd._Carol_I Piața_Rosetti Piața_Sfântul_Gheorghe
+
+44 15 Mezes Marmurei Crinului Minerva Navigatiei Bd._Bucurestii_Noi Carpati Clabucet Aviator_Popisteanu Piata_Domenii Bd._Maresal_Averescu Piata_Ion_Mihalache Piata_Victoriei Dr._Felix Gara_De_Nord
+
+45 14 Piata_Unirii 11_Iunie Gramont Parcul_Carol I Autogara_Filaret Soseaua_Viilor Spatarul_Preda Calea_Rahovei Inox Calea_13_Septembrie Sebastian Drumul_Sarii Cimitirul_Ghencea Ghencea
+
+55 13 Piata_Sf._Vineri Alexandru_Sihleanu Hala_Traian Bd._Pache_Protopopescu Scoala_Iancului Matasari Piata_Iancului Lt._Victor_Manu Bd._Pierre_De_Coubertin Bd._Chisinau Soseaua_Morarilor Spitalul_Sf._Pantelimon Pantelimon
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

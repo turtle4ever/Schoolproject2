@@ -8,7 +8,11 @@
 #include <windows.h>
 #include <string>
 #include <cctype>
+
 //comme
+
+//alex e smecsi
+
 using namespace std;
 
 ifstream statin ( "STATII.in" ) ;

@@ -8,7 +8,7 @@
 #include <windows.h>
 #include <string>
 #include <cctype>
-//comment
+//alex e smecsi
 using namespace std;
 
 ifstream statin ( "STATII.in" ) ;

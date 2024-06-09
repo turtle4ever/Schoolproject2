@@ -93,7 +93,7 @@ int casesout ( )
     cout << "1. Ce statii contine o linie de stb? \n" ; //done
     cout << "2. Ce linii contine statia A? \n" ; //done
     cout << "3.  \n" ;
-    cout << "4. Se poate ajunge din A in B, si daca da, cum? \n" ;
+    cout << "4. Se poate ajunge din A in B? \n" ;
     cout << "5. Ce distanta are linia A? \n" ; //done
     cout << "6. Care este cea mai \"aglomerata\" statie? \n" ;
     cout << "7. Care sunt statiile fara alte conexiuni ale unei linii? \n" ;
@@ -245,7 +245,7 @@ int cases ( )
                 break ;
 
             }
-            case '3' :
+            case '4' :
             {
                 int okt , okk ;
                 int i , j , aa , bb;
@@ -329,11 +329,12 @@ int cases ( )
                    findPath ( aa , bb ) ;
                    if ( v [ bb ] == 1 )
                    {
-                       cout << "DA" ;
+                       system ( "cls" ) ;
+                       cout << "Exista o cale sa se ajunga din A in B" ;
                    }
                 }
                 break ;
-            }case '4' :
+            }case '3' :
             {
                 system ( "cls" ) ;
                 cout << "test4" ;

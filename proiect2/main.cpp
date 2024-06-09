@@ -9,20 +9,23 @@
 #include <string>
 #include <cctype>
 
-//comme
-
-//alex e smecsi
-
 using namespace std;
 
 ifstream statin ( "STATII.in" ) ;
 ifstream linin ( "LINII.in" ) ;
+ifstream idin ( "ID.in" ) ;
 
 //numar statii si numar linii
 int n , m ;
 
 //matrice adiacenta
 int ma [ 1001 ] [ 1001 ] ;
+
+//vector vizitati
+int v [ 1001 ] = { 0 } ;
+
+//vector drum
+int dr [ 1001 ] = { 0 } , cnt ;
 
 //linii si statii de autobuz
 struct linii
@@ -32,6 +35,12 @@ struct linii
     char statii [ 46 ] [ 50 ] ;
     int statiiid [ 46 ] ;
 } linii [ 150 ] ;
+
+struct id
+{
+    int ids ;
+    char idstatii [ 50 ] ;
+} id [ 1001 ] ;
 
 // citire matrice adiacenta
 int readma ( )
@@ -59,11 +68,22 @@ int readl ( )
     }
 }
 
+int readid ( )
+{
+    int i ;
+    for ( i = 0 ; i < n ; i ++ )
+    {
+        idin >> id [ i ] .ids ;
+        idin >> id [ i ] .idstatii ;
+    }
+}
+
 //read
 int read ( )
 {
     readma ( );
     readl ( ) ;
+    readid ( ) ;
 }
 
 //cases cout
@@ -71,14 +91,14 @@ int casesout ( )
 {
     system ( "cls" ) ;
     cout << "1. Ce statii contine o linie de stb? \n" ; //done
-    cout << "2. Ce linii contin statia A? \n" ; //done
-    cout << "3. Se poate ajunge din A in B? \n" ;
-    cout << "4. Cum se ajunge din A in B? \n" ;
+    cout << "2. Ce linii contine statia A? \n" ; //done
+    cout << "3.  \n" ;
+    cout << "4. Se poate ajunge din A in B, si daca da, cum? \n" ;
     cout << "5. Ce distanta are linia A? \n" ; //done
     cout << "6. Care este cea mai \"aglomerata\" statie? \n" ;
-    cout << "7. Care sunt statiile fara alte conexiuni ale unei statii? \n" ;
+    cout << "7. Care sunt statiile fara alte conexiuni ale unei linii? \n" ;
     cout << "8. Care sunt liniile izolate? \n" ;
-    cout << "9. Care doua linii au cele mai multe statii comune? \n" ;
+    cout << "9. Afiseaza statiile si codurile lor, respectiv liniile \n" ;
     cout << "0. Cate statii comune are linia a cu b? \n" ;//done
     cout << "Press the number of the case to access it or space to exit \n" ;
 }
@@ -90,6 +110,28 @@ int gd ( )
     cout << "Have a good day!" ;
     getch ( ) ;
 }
+
+
+//pathing
+void findPath( int start, int en ) {
+
+    int i ;
+
+    v [ start ] = 1 ;
+    if (start == en) {
+        return;
+    }
+
+    for ( i = 0 ; i < n ; i ++ )
+    {
+        if ( ma [ start ] [ i ] == 1 && v [ i ] == 0 ) {
+            findPath( i, en ) ;
+        }
+    }
+
+    v [ start ] = 0 ;
+}
+
 
 //cases interface
 int cases ( )
@@ -165,7 +207,7 @@ int cases ( )
                     cout << "Inserati numele statiei\n" ;
 
                     int i , j ;
-                    char tn [ 40 ] ;
+                    char tn [ 50 ] ;
                     char crc ;
                     cin >> tn ;
 
@@ -205,9 +247,91 @@ int cases ( )
             }
             case '3' :
             {
-                system ( "cls" ) ;
-                cout << "test3" ;
-                getch ( ) ;
+                int okt , okk ;
+                int i , j , aa , bb;
+                char tna [ 50 ] , tnb [ 50 ] ;
+                okt = okk = 1 ;
+                while ( okt )
+                {
+                    system ( "cls" ) ;
+                    cout << "Inserati statiile\n" ;
+
+                    char crc ;
+                    cin >> tna >> tnb ;
+
+                    for ( i = 0 ; i < m ; i ++ )
+                    {
+                        for ( j = 0 ; j < linii [ i ] .numstatii ; j ++ )
+                        {
+                            if ( strcmp ( linii [ i ] .statii [ j ] , tna ) == 0 )
+                            {
+                                aa = linii [ i ] .statiiid [ j ] ;
+                                okt = 0 ;
+                            }
+                        }
+
+                    }
+                    if ( okt )
+                    {
+                        cout << "\nStatia A nu exista!" ;
+                        cout << "\nApasati backspace pentru a va intoarce la meniu sau orice alta tasta pentru a incerca din nou" ;
+                        crc = getch ( ) ;
+                        switch ( crc )
+                        {
+                            case '\b' :
+                            {
+                                okt = 0 ;
+                                break;
+                            }
+                            default :
+                            {
+                                okt = 1 ;
+                            }
+                        }
+                    }
+                    else
+                    {
+                        okt = 1 ;
+                        for ( i = 0 ; i < m ; i ++ )
+                        {
+                            for ( j = 0 ; j < linii [ i ] .numstatii ; j ++ )
+                            {
+                                if ( strcmp ( linii [ i ] .statii [ j ] , tna ) == 0 )
+                                {
+                                    bb = linii [ i ] .statiiid [ j ] ;
+                                    okt = 0 ;
+                                    okk = 0 ;
+                                }
+                            }
+                        }
+                        if ( okt )
+                        {
+                            cout << "\nStatia B nu exista!" ;
+                            cout << "\nApasati backspace pentru a va intoarce la meniu sau orice alta tasta pentru a incerca din nou" ;
+                            crc = getch ( ) ;
+                            switch ( crc )
+                            {
+                                case '\b' :
+                                {
+                                    okt = 0 ;
+                                    break;
+                                }
+                                default :
+                                {
+                                    okt = 1 ;
+                                }
+                            }
+                        }
+                    }
+                }
+                if ( okk == 0 )
+                {
+                   findPath ( aa , bb ) ;
+                   if ( v [ bb ] == 1 )
+                   {
+                       cout << "DA" ;
+                   }
+                }
                 break ;
             }case '4' :
             {

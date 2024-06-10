@@ -108,7 +108,7 @@ void casesout ( )
     system ( "cls" ) ;
     cout << "1. Ce statii contine o linie de stb? \n" ; //done
     cout << "2. Ce linii contine statia A? \n" ; //done
-    cout << "3. \n" ;
+    cout << "3. Exista linii lant si daca da, care sunt? \n" ;
     cout << "4. Se poate ajunge din A in B? \n" ; //done
     cout << "5. Ce distanta are linia A? \n" ; //done
     cout << "6. Care este cea mai \"aglomerata\" statie? \n" ; //done
@@ -258,6 +258,7 @@ void cases ( )
                         }
                     }
                 }
+                getch ( ) ;
                 break ;
 
             }
@@ -350,11 +351,12 @@ void cases ( )
                    }
                    fill ( v , v + n , 0 ) ;
                 }
+                getch ( ) ;
                 break ;
             }
             case '3' :
             {
-                int i = 0 , vectorrr [ 151 ]  { 0 } , j ;
+                int i = 0 , vectorrr [ 151 ] =  { 0 } , j ;
 
                 j = 0 ;
 
@@ -709,7 +711,7 @@ void cases ( )
                         }
                     }
                     system ( "cls" ) ;
-                    cout << "Liniile " << aa << " si " << bb << " au " << s << " statii in comun." ;
+                    cout << "Liniile " << tna << " si " << tnb << " au " << s << " statii in comun." ;
                     getch ( ) ;
                 }
                 break ;

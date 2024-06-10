@@ -99,7 +99,7 @@ void casesout ( )
     cout << "3. \n" ;
     cout << "4. Se poate ajunge din A in B? \n" ; //done
     cout << "5. Ce distanta are linia A? \n" ; //done
-    cout << "6. Care este cea mai \"aglomerata\" statie? \n" ;
+    cout << "6. Care este cea mai \"aglomerata\" statie? \n" ; //done
     cout << "7. Care sunt statiile fara alte conexiuni ale unei linii? \n" ;
     cout << "8. Care sunt liniile izolate? \n" ;
     cout << "9. Afiseaza statiile si codurile lor, respectiv liniile \n" ;

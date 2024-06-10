@@ -69,17 +69,16 @@ void readma ( )
 //citire sistem de linii si statii
 void readl ( )
 {
+    system("cls") ;
     int i , j ;
     linin >> m ;
     for ( i = 0 ; i < m ; i ++ )
     {
         linin >> linii [ i ] .linie ;
         linin >> linii [ i ] .numstatii ;
-        linin.get ( ) ;
         for ( j = 0 ; j < linii [ i ] .numstatii ; j ++ )
         {
             linin >> linii [ i ] .statii [ j ] >> linii [ i ] .statiiid [ j ] ;
-            linin.get ( ) ;
         }
     }
 }
@@ -497,30 +496,41 @@ void cases ( )
             case '7' :
             {
                 int i , j , minime [ 1001 ] = { 0 } ;
-
-                if ( frecv2 [ 0 ] == 0 )
+                system ( "cls" ) ;
+                if ( frecv2 [ 0 ] != -1 )
                 {
                     for ( i = 0 ; i < m ; i ++ )
                     {
-                        for ( j = 0 ; j < n ; j ++ )
+                        for ( j = 0 ; j < linii [ i ] .numstatii ; j ++ )
                         {
                             frecv2 [ linii [ i ] .statiiid [ j ] + 1 ] ++ ;
+                            cout << linii [ i ] .statiiid [ j ] + 1 << " " ;
+                            cout << frecv2 [ linii [ i ] .statiiid [ j ] + 1 ] << "\n" ;
                         }
                     }
                     frecv2 [ 0 ] = -1 ;
                 }
+                getch ( ) ;
+                system ( "cls" ) ;
+                for ( j = 0 ; j <= 300 ; j ++ )
+                {
+                    cout << frecv2 [ j ] << "\n" ;
+                }
 
+                    getch ( ) ;
+                    system ( "cls" ) ;
                 j = 0 ;
 
-                for ( i = 1 ; i <= n ; i ++ )
+                for ( i = 1 ; i <= 270 ; i ++ )
                 {
                     if ( frecv2 [ i ] == 1 )
                     {
                         minime [ j ] = i - 1 ;
                         j ++ ;
+                        cout << j << "\n" ;
                     }
                 }
-
+                getch ( ) ;
 
                 system ( "cls" ) ;
                 if ( j == 1 )

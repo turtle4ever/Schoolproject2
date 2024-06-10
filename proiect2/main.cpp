@@ -93,7 +93,7 @@ int casesout ( )
     cout << "1. Ce statii contine o linie de stb? \n" ; //done
     cout << "2. Ce linii contine statia A? \n" ; //done
     cout << "3.  \n" ;
-    cout << "4. Se poate ajunge din A in B? \n" ;
+    cout << "4. Se poate ajunge din A in B? \n" ; //done
     cout << "5. Ce distanta are linia A? \n" ; //done
     cout << "6. Care este cea mai \"aglomerata\" statie? \n" ;
     cout << "7. Care sunt statiile fara alte conexiuni ale unei linii? \n" ;

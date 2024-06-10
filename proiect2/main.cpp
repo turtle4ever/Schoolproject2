@@ -28,7 +28,7 @@ int v [ 1001 ] = { 0 } ;
 int dr [ 1001 ] = { 0 } , cnt ;
 
 //vector frecvente linii
-int frecv [ 1002 ] , frecv2 [ 1002 ] ;
+int frecv [ 1002 ] , frecv2 [ 1002 ] , frecv3 ;
 
 //linii si statii de autobuz
 struct linii
@@ -102,7 +102,7 @@ void casesout ( )
     cout << "4. Se poate ajunge din A in B? \n" ; //done
     cout << "5. Ce distanta are linia A? \n" ; //done
     cout << "6. Care este cea mai \"aglomerata\" statie? \n" ; //done
-    cout << "7. Care sunt statiile fara alte conexiuni ale unei linii? \n" ; //dpme
+    cout << "7. Care sunt statiile fara alte conexiuni ale unei linii? \n" ; //done
     cout << "8. Care sunt liniile izolate? \n" ;
     cout << "9. Afiseaza statiile si codurile lor, respectiv liniile \n" ;
     cout << "0. Cate statii comune are linia a cu b? \n" ;//done
@@ -503,8 +503,34 @@ void cases ( )
             }
             case '8' :
             {
-                system ( "cls" ) ;
-                cout << "test8" ;
+               int i , j , l , minime [ 1001 ] = { 0 } ;
+
+                if ( frecv2 [ 0 ] == 0 )
+                {
+                    for ( i = 0 ; i < m ; i ++ )
+                    {
+                        for ( j = 0 ; j < n ; j ++ )
+                        {
+                            frecv2 [ linii [ i ] .statiiid [ j ] + 1 ] ++ ;
+                        }
+                    }
+                    frecv2 [ 0 ] = -1 ;
+                }
+
+                j = 0 ;
+                int oklmn = 0 ;
+
+                for ( i = 0 ; i < m ; i ++ )
+                {
+                    for ( l = 0 ; l < n ; l ++ )
+                    {
+                        if ( frecv2 [ i - 1 ] == 1 )
+                        {
+
+                        }
+                    }
+                }
+
                 getch ( ) ;
                 break ;
             }

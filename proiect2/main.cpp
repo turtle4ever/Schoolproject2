@@ -344,11 +344,42 @@ void cases ( )
             }
             case '3' :
             {
-                int i = 0 , vectorrr [ 151 ] ;
+                int i = 0 , vectorrr [ 151 ]  { 0 } , j ;
+
+                j = 0 ;
+
                 for ( i = 0 ; i < m ; i ++ )
                 {
-
+                    if ( linii [ i ] .statiiid [ 0 ] == linii [ i ] .statiiid [ linii [ i ] .numstatii - 1 ]  )
+                    {
+                        vectorrr [ j ] = linii [ i ] .linie ;
+                        j ++ ;
+                    }
                 }
+
+                system ( "cls" ) ;
+
+                if ( j == 0 )
+                {
+                    cout << "Nu exista linii lant \n" ;
+                }
+                else
+                {
+                    if ( j == 1 )
+                    {
+                        cout << "Linia lant este " << vectorrr [ 0 ] << " \n" ;
+                    }
+                    else
+                    {
+                        cout << "Liniile lant sunt : \n" ;
+                        for ( i = 0 ; i < j - 1 ; i ++ )
+                        {
+                            cout << vectorrr [ i ] << ", \n" ;
+                        }
+                        cout << vectorrr [ j - 1 ]  << "\n" ;
+                    }
+                }
+
                 getch ( ) ;
                 break ;
             }
@@ -520,7 +551,6 @@ void cases ( )
                 }
 
                 j = 0 ;
-                int oklmn = 0 ;
 
                 for ( i = 0 ; i < m ; i ++ )
                 {

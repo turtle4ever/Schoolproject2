@@ -27,10 +27,14 @@ int v [ 1001 ] = { 0 } ;
 //vector drum
 int dr [ 1001 ] = { 0 } , cnt ;
 
+//vector frecvente linii
+int frecv [ 1002 ] ;
+
 //linii si statii de autobuz
 struct linii
 {
     int linie ;
+    int izolat ;
     int numstatii ;
     char statii [ 46 ] [ 50 ] ;
     int statiiid [ 46 ] ;
@@ -43,7 +47,7 @@ struct id
 } id [ 1001 ] ;
 
 // citire matrice adiacenta
-int readma ( )
+void readma ( )
 {
     int i , j ;
     statin >> n ;
@@ -53,7 +57,7 @@ int readma ( )
 }
 
 //citire sistem de linii si statii
-int readl ( )
+void readl ( )
 {
     int i , j ;
     linin >> m ;
@@ -68,7 +72,7 @@ int readl ( )
     }
 }
 
-int readid ( )
+void readid ( )
 {
     int i ;
     for ( i = 0 ; i < n ; i ++ )
@@ -79,7 +83,7 @@ int readid ( )
 }
 
 //read
-int read ( )
+void read ( )
 {
     readma ( );
     readl ( ) ;
@@ -87,12 +91,12 @@ int read ( )
 }
 
 //cases cout
-int casesout ( )
+void casesout ( )
 {
     system ( "cls" ) ;
     cout << "1. Ce statii contine o linie de stb? \n" ; //done
     cout << "2. Ce linii contine statia A? \n" ; //done
-    cout << "3.  \n" ;
+    cout << "3. \n" ;
     cout << "4. Se poate ajunge din A in B? \n" ; //done
     cout << "5. Ce distanta are linia A? \n" ; //done
     cout << "6. Care este cea mai \"aglomerata\" statie? \n" ;
@@ -104,7 +108,7 @@ int casesout ( )
 }
 
 //cout good day and terminate
-int gd ( )
+void gd ( )
 {
     system ( "cls" ) ;
     cout << "Have a good day!" ;
@@ -134,7 +138,7 @@ void findPath( int start, int en ) {
 
 
 //cases interface
-int cases ( )
+void cases ( )
 {
     //character for switch and a bool for loop
     char ch , ok ;
@@ -332,6 +336,7 @@ int cases ( )
                        system ( "cls" ) ;
                        cout << "Exista o cale sa se ajunga din A in B" ;
                    }
+                   fill ( v , v + n , 0 ) ;
                 }
                 break ;
             }case '3' :
@@ -358,7 +363,6 @@ int cases ( )
                     {
                         if ( linii [ i ] .linie == tn )
                         {
-                            int j ;
                             cout << linii [ i ] .numstatii << "\n" ;
                             okt = 0 ;
                             getch ( ) ;
@@ -389,8 +393,56 @@ int cases ( )
             }
             case '6' :
             {
+                int maxx , i , j , maxime [ 1001 ] = { 0 } ;
+
+                maxx = 0 ;
+
+                if ( frecv [ 0 ] == 0 )
+                {
+                    for ( i = 0 ; i < m ; i ++ )
+                    {
+                        for ( j = 0 ; j < n ; j ++ )
+                        {
+                            frecv [ linii [ i ] .statiiid [ j ] + 1 ] ++ ;
+                        }
+                    }
+                    frecv [ 0 ] = -1 ;
+                }
+
+                j = 0 ;
+
+                for ( i = 1 ; i <= n ; i ++ )
+                {
+                    if ( maxx < frecv [ i - 1 ] )
+                    {
+                        maxx = frecv [ i - 1 ] ;
+                        maxime [ 0 ] = i - 1 ;
+                        j = 1 ;
+
+                    }
+                    else
+                        if ( maxx == frecv [ i - 1 ] )
+                        {
+                            maxime [ j ] = i - 1 ;
+                            j ++ ;
+                        }
+                }
+
+
                 system ( "cls" ) ;
-                cout << "test6" ;
+                if ( j == 1 )
+                    cout << "Statia cea mai \"aglomerata\" este " << id [ j - 1 ] .idstatii ;
+                else
+                {
+                    cout << "Statia cele mai \"aglomerate\" sunt : \n" ;
+                    for ( i = 0 ; i < j - 1 ; i ++ )
+                    {
+                        cout << id [ maxime [ i ] ] .idstatii << ", \n" ;
+                    }
+                    cout << id [ maxime [ j - 1 ] ] .idstatii << "\n" ;
+                }
+
+
                 getch ( ) ;
                 break ;
             }

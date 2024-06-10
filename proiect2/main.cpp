@@ -11,9 +11,19 @@
 
 using namespace std;
 
-ifstream statin ( "STATII.in" ) ;
-ifstream linin ( "LINII.in" ) ;
-ifstream idin ( "ID.in" ) ;
+ifstream statin ( "STATII.txt" ) ;
+ifstream linin ( "LINII.txt" ) ;
+ifstream idin ( "ID.txt" ) ;
+
+
+void gotoxy(int a, int b)
+{
+    COORD coordinates;
+    coordinates.X = a;
+    coordinates.Y = b;
+SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), coordinates);
+}
+
 
 //numar statii si numar linii
 int n , m ;
@@ -595,17 +605,23 @@ void cases ( )
             }
             case '9' :
             {
-                int i , j ;
+                int i , j , l = 0 ;
                 system ( "cls" ) ;
-                for ( i = 0 ; i < m ; i ++ )
+                for ( int i = 0 ; i < m ; i ++ )
                 {
-                    cout << "Linia: " << linii [ i ] .linie ;
-                    for ( j = 0 ; j < linii [ i ] .numstatii ; j ++ )
+                    cout << "Linia: " << linii [ i ] .linie << "\n" ;
+                    l ++ ;
+                    for ( int j = 0 ; j < linii [ i ] .numstatii ; j ++ )
                     {
-                        cout << " ID - " << linii [ i ] .statiiid [ j ] << "    Denumire statie - " << linii [ i ] .statii [ j ] << "\n" ;
+                        l ++ ;
+                        cout << " ID - " << linii [ i ] .statiiid [ j ] ;
+                        gotoxy ( 10 , l ) ;
+                        cout << "    Denumire statie - " << linii [ i ] .statii [ j ] << "\n" ;
+                        gotoxy ( 0 , l + 1 ) ;
                     }
                 }
-                cout << "test9" ;
+                //cout << "test9" ;
+                gotoxy ( 0 , 0 ) ;
                 getch ( ) ;
                 break ;
             }

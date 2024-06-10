@@ -34,7 +34,7 @@ int frecv [ 1002 ] , frecv2 [ 1002 ] , frecv3 ;
 struct linii
 {
     int linie ;
-    int izolat ;
+    int izolat = 0 ;
     int numstatii ;
     char statii [ 46 ] [ 50 ] ;
     int statiiid [ 46 ] ;
@@ -416,15 +416,15 @@ void cases ( )
 
                 for ( i = 1 ; i <= n ; i ++ )
                 {
-                    if ( maxx < frecv [ i - 1 ] )
+                    if ( maxx < frecv [ i ] )
                     {
-                        maxx = frecv [ i - 1 ] ;
+                        maxx = frecv [ i ] ;
                         maxime [ 0 ] = i - 1 ;
                         j = 1 ;
 
                     }
                     else
-                        if ( maxx == frecv [ i - 1 ] )
+                        if ( maxx == frecv [ i ] )
                         {
                             maxime [ j ] = i - 1 ;
                             j ++ ;
@@ -467,13 +467,12 @@ void cases ( )
 
                 j = 0 ;
 
-                for ( i = 2 ; i <= n ; i ++ )
+                for ( i = 1 ; i <= n ; i ++ )
                 {
-                    if ( frecv2 [ i - 1 ] == 1 )
+                    if ( frecv2 [ i ] == 1 )
                     {
                         minime [ j ] = i - 1 ;
                         j ++ ;
-
                     }
                 }
 
@@ -524,10 +523,37 @@ void cases ( )
                 {
                     for ( l = 0 ; l < n ; l ++ )
                     {
-                        if ( frecv2 [ i - 1 ] == 1 )
+                        if ( frecv2 [ l ] != 1 )
                         {
-
+                            linii [ i ].izolat = 1 ;
+                            l = n ;
                         }
+                    }
+                    if ( linii [ i ].izolat == 0 )
+                    {
+                        minime [ j ] = i ;
+                        j ++ ;
+                    }
+                }
+
+                system ( "cls" ) ;
+
+                if ( j == 1 )
+                    cout << "Linia izolata este " << linii [ minime [ 0 ] ] .linie ;
+                else
+                {
+                    if ( j == 0 )
+                    {
+                        cout << "Nu exista linii izolate \n" ;
+                    }
+                    else
+                    {
+                        cout << "Liniile izolate sunt : \n" ;
+                        for ( i = 0 ; i < j - 1 ; i ++ )
+                        {
+                            cout << linii [ minime [ i ] ] .linie << ", \n" ;
+                        }
+                        cout << linii [ minime [ j - 1 ] ] .linie << "\n" ;
                     }
                 }
 
@@ -537,7 +563,7 @@ void cases ( )
             case '9' :
             {
                 system ( "cls" ) ;
-                for ( i = 0 ; i < m ; i ++ )
+               // for ( i = 0 ; i < m ; i ++ )
                 cout << "test9" ;
                 getch ( ) ;
                 break ;

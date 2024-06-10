@@ -511,6 +511,7 @@ void cases ( )
             case '9' :
             {
                 system ( "cls" ) ;
+                for ( i = 0 ; i < m ; i ++ )
                 cout << "test9" ;
                 getch ( ) ;
                 break ;

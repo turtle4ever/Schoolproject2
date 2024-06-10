@@ -564,6 +564,13 @@ void cases ( )
             {
                 system ( "cls" ) ;
                 for ( i = 0 ; i < m ; i ++ )
+                {
+                    cout << "Linia: " << linii [ i ] .linie ;
+                    for ( j = 0 ; j < linii [ i ] .numstatii ; j ++ )
+                    {
+                        cout << " ID - " << linii [ i ] .statiiid [ j ] << "    Denumire statie - " << linii [ i ] .statii [ j ] << "\n" ;
+                    }
+                }
                 cout << "test9" ;
                 getch ( ) ;
                 break ;

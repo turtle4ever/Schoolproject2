@@ -368,7 +368,7 @@ void cases ( )
                         j ++ ;
                     }
                 }
-
+//
                 system ( "cls" ) ;
 
                 if ( j == 0 )
@@ -391,7 +391,6 @@ void cases ( )
                         cout << vectorrr [ j - 1 ]  << "\n" ;
                     }
                 }
-
                 getch ( ) ;
                 break ;
             }

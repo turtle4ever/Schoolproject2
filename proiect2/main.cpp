@@ -344,8 +344,11 @@ void cases ( )
             }
             case '3' :
             {
-                system ( "cls" ) ;
-                cout << "test4" ;
+                int i = 0 , vectorrr [ 151 ] ;
+                for ( i = 0 ; i < m ; i ++ )
+                {
+
+                }
                 getch ( ) ;
                 break ;
             }
@@ -562,6 +565,7 @@ void cases ( )
             }
             case '9' :
             {
+                int i , j ;
                 system ( "cls" ) ;
                 for ( i = 0 ; i < m ; i ++ )
                 {

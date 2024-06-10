@@ -339,7 +339,8 @@ void cases ( )
                    fill ( v , v + n , 0 ) ;
                 }
                 break ;
-            }case '3' :
+            }
+            case '3' :
             {
                 system ( "cls" ) ;
                 cout << "test4" ;

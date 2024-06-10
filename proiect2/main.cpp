@@ -90,6 +90,7 @@ void readid ( )
     {
         idin >> id [ i ] .ids ;
         idin >> id [ i ] .idstatii ;
+
     }
 }
 
@@ -448,7 +449,7 @@ void cases ( )
                 {
                     for ( i = 0 ; i < m ; i ++ )
                     {
-                        for ( j = 0 ; j < n ; j ++ )
+                        for ( j = 0 ; j < linii [ i ] .numstatii ; j ++ )
                         {
                             frecv [ linii [ i ] .statiiid [ j ] + 1 ] ++ ;
                         }
@@ -497,7 +498,7 @@ void cases ( )
             case '7' :
             {
                 int i , j , minime [ 1001 ] = { 0 } ;
-                system ( "cls" ) ;
+
                 if ( frecv2 [ 0 ] != -1 )
                 {
                     for ( i = 0 ; i < m ; i ++ )
@@ -505,33 +506,23 @@ void cases ( )
                         for ( j = 0 ; j < linii [ i ] .numstatii ; j ++ )
                         {
                             frecv2 [ linii [ i ] .statiiid [ j ] + 1 ] ++ ;
-                            cout << linii [ i ] .statiiid [ j ] + 1 << " " ;
-                            cout << frecv2 [ linii [ i ] .statiiid [ j ] + 1 ] << "\n" ;
+
                         }
                     }
                     frecv2 [ 0 ] = -1 ;
                 }
-                getch ( ) ;
-                system ( "cls" ) ;
-                for ( j = 0 ; j <= 300 ; j ++ )
-                {
-                    cout << frecv2 [ j ] << "\n" ;
-                }
 
-                    getch ( ) ;
-                    system ( "cls" ) ;
                 j = 0 ;
 
-                for ( i = 1 ; i <= 270 ; i ++ )
+                for ( i = 1 ; i <= n ; i ++ )
                 {
                     if ( frecv2 [ i ] == 1 )
                     {
                         minime [ j ] = i - 1 ;
                         j ++ ;
-                        cout << j << "\n" ;
+
                     }
                 }
-                getch ( ) ;
 
                 system ( "cls" ) ;
                 if ( j == 1 )
@@ -564,7 +555,7 @@ void cases ( )
                 {
                     for ( i = 0 ; i < m ; i ++ )
                     {
-                        for ( j = 0 ; j < n ; j ++ )
+                        for ( j = 0 ; j < linii [ i ] .numstatii ; j ++ )
                         {
                             frecv2 [ linii [ i ] .statiiid [ j ] + 1 ] ++ ;
                         }

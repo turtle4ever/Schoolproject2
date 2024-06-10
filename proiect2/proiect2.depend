@@ -11,3 +11,15 @@
 	<string>
 	<cctype>
 
+1718045075 source:d:\radu\info\schoolproject2\proiect2\main.cpp
+	<iostream>
+	<fstream>
+	<stdlib.h>
+	<conio.h>
+	<cstdlib>
+	<time.h>
+	<chrono>
+	<windows.h>
+	<string>
+	<cctype>
+

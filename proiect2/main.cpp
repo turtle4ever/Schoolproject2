@@ -28,7 +28,7 @@ int v [ 1001 ] = { 0 } ;
 int dr [ 1001 ] = { 0 } , cnt ;
 
 //vector frecvente linii
-int frecv [ 1002 ] ;
+int frecv [ 1002 ] , frecv2 [ 1002 ] ;
 
 //linii si statii de autobuz
 struct linii
@@ -65,10 +65,12 @@ void readl ( )
     {
         linin >> linii [ i ] .linie ;
         linin >> linii [ i ] .numstatii ;
+        linin.get ( ) ;
         for ( j = 0 ; j < linii [ i ] .numstatii ; j ++ )
-            linin >> linii [ i ] .statii [ j ] ;
-        for ( j = 0 ; j < linii [ i ] .numstatii ; j ++ )
-            linin >> linii [ i ] .statiiid [ j ] ;
+        {
+            linin >> linii [ i ] .statii [ j ] >> linii [ i ] .statiiid [ j ] ;
+            linin.get ( ) ;
+        }
     }
 }
 
@@ -100,7 +102,7 @@ void casesout ( )
     cout << "4. Se poate ajunge din A in B? \n" ; //done
     cout << "5. Ce distanta are linia A? \n" ; //done
     cout << "6. Care este cea mai \"aglomerata\" statie? \n" ; //done
-    cout << "7. Care sunt statiile fara alte conexiuni ale unei linii? \n" ;
+    cout << "7. Care sunt statiile fara alte conexiuni ale unei linii? \n" ; //dpme
     cout << "8. Care sunt liniile izolate? \n" ;
     cout << "9. Afiseaza statiile si codurile lor, respectiv liniile \n" ;
     cout << "0. Cate statii comune are linia a cu b? \n" ;//done
@@ -432,7 +434,7 @@ void cases ( )
 
                 system ( "cls" ) ;
                 if ( j == 1 )
-                    cout << "Statia cea mai \"aglomerata\" este " << id [ j - 1 ] .idstatii ;
+                    cout << "Statia cea mai \"aglomerata\" este " << id [ maxime [ 0 ] - 1 ] .idstatii ;
                 else
                 {
                     cout << "Statia cele mai \"aglomerate\" sunt : \n" ;
@@ -449,8 +451,53 @@ void cases ( )
             }
             case '7' :
             {
+                int i , j , minime [ 1001 ] = { 0 } ;
+
+                if ( frecv2 [ 0 ] == 0 )
+                {
+                    for ( i = 0 ; i < m ; i ++ )
+                    {
+                        for ( j = 0 ; j < n ; j ++ )
+                        {
+                            frecv2 [ linii [ i ] .statiiid [ j ] + 1 ] ++ ;
+                        }
+                    }
+                    frecv2 [ 0 ] = -1 ;
+                }
+
+                j = 0 ;
+
+                for ( i = 2 ; i <= n ; i ++ )
+                {
+                    if ( frecv2 [ i - 1 ] == 1 )
+                    {
+                        minime [ j ] = i - 1 ;
+                        j ++ ;
+
+                    }
+                }
+
+
                 system ( "cls" ) ;
-                cout << "test`7" ;
+                if ( j == 1 )
+                    cout << "Statia fara alte conexiuni ale unei linii este " << id [ minime [ 0 ] - 1 ] .idstatii ;
+                else
+                {
+                    if ( j == 0 )
+                    {
+                        cout << "Nu exista statii fara alte conexiuni ale unei linii \n" ;
+                    }
+                    else
+                    {
+                        cout << "Statiile fara alte conexiuni ale unei linii sunt : \n" ;
+                        for ( i = 0 ; i < j - 1 ; i ++ )
+                        {
+                            cout << id [ minime [ i ] ] .idstatii << ", \n" ;
+                        }
+                        cout << id [ minime [ j - 1 ] ] .idstatii << "\n" ;
+                    }
+                }
+
                 getch ( ) ;
                 break ;
             }
@@ -566,6 +613,7 @@ void cases ( )
             default : {
                 cout << "\nPlease press a correct key to access the cases or exit!" ;
                 getch ( ) ;
+                break ;
             }
         }
     }

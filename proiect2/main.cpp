@@ -467,12 +467,13 @@ void cases ( )
                         j = 1 ;
 
                     }
-                    else
+                    else{
                         if ( maxx == frecv [ i ] )
                         {
                             maxime [ j ] = i - 1 ;
                             j ++ ;
                         }
+                    }
                 }
 
 

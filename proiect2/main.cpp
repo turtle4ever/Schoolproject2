@@ -38,7 +38,7 @@ int v [ 1001 ] = { 0 } ;
 int dr [ 1001 ] = { 0 } , cnt ;
 
 //vector frecvente linii
-int frecv [ 1002 ] , frecv2 [ 1002 ] , frecv3 ;
+int frecv [ 1002 ] , frecv2 [ 1002 ] = { 0 } , frecv3 [ 1002 ] ;
 
 //linii si statii de autobuz
 struct linii
@@ -551,28 +551,27 @@ void cases ( )
             {
                int i , j , l , minime [ 1001 ] = { 0 } ;
 
-                if ( frecv2 [ 0 ] == 0 )
+                if ( frecv3 [ 0 ] != -1 )
                 {
                     for ( i = 0 ; i < m ; i ++ )
                     {
                         for ( j = 0 ; j < linii [ i ] .numstatii ; j ++ )
                         {
-                            frecv2 [ linii [ i ] .statiiid [ j ] + 1 ] ++ ;
+                            frecv3 [ linii [ i ] .statiiid [ j ] + 1 ] ++ ;
                         }
                     }
-                    frecv2 [ 0 ] = -1 ;
+                    frecv3 [ 0 ] = -1 ;
                 }
 
-                j = 0 ;
 
+                j = 0 ;
                 for ( i = 0 ; i < m ; i ++ )
                 {
-                    for ( l = 0 ; l < n ; l ++ )
+                    for ( l = 0 ; l < linii [ i ] .numstatii ; l ++ )
                     {
-                        if ( frecv2 [ l ] != 1 )
-                        {
-                            linii [ i ].izolat = 1 ;
-                            l = n ;
+                        if ( frecv3 [ linii [ i ] .statiiid [ l ] + 1 ] > 1 )
+                        {                            linii [ i ].izolat = 1 ;
+                            l = linii [ i ] .numstatii ;
                         }
                     }
                     if ( linii [ i ].izolat == 0 )
@@ -581,7 +580,6 @@ void cases ( )
                         j ++ ;
                     }
                 }
-
                 system ( "cls" ) ;
 
                 if ( j == 1 )

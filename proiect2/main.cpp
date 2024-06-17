@@ -26,7 +26,7 @@ SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), coordinates);
 
 
 //numar statii si numar linii
-int n , m ;
+int n , m , okpaa ;
 
 //matrice adiacenta
 int ma [ 1001 ] [ 1001 ] ;
@@ -131,21 +131,28 @@ void gd ( )
 //pathing
 void findPath( int start, int en ) {
 
-    int i ;
-
-    v [ start ] = 1 ;
-    if (start == en) {
-        return;
-    }
-
-    for ( i = 0 ; i < n ; i ++ )
+    if ( okpaa == 1 )
     {
-        if ( ma [ start ] [ i ] == 1 && v [ i ] == 0 ) {
-            findPath( i, en ) ;
+        int i ;
+
+        v [ start ] = 1 ;
+        if (start == en) {
+
+             okpaa = 0 ;   cout << "a" ;
+            return;
+        }
+        else
+        {
+            for ( i = 0 ; i < n ; i ++ )
+            {
+                if ( ma [ start ] [ i ] == 1 && v [ i ] == 0 ) {
+                    findPath( i, en ) ;
+                }
+            }
+
+            v [ start ] = 0 ;
         }
     }
-
-    v [ start ] = 0 ;
 }
 
 
@@ -313,7 +320,7 @@ void cases ( )
                         {
                             for ( j = 0 ; j < linii [ i ] .numstatii ; j ++ )
                             {
-                                if ( strcmp ( linii [ i ] .statii [ j ] , tna ) == 0 )
+                                if ( strcmp ( linii [ i ] .statii [ j ] , tnb ) == 0 )
                                 {
                                     bb = linii [ i ] .statiiid [ j ] ;
                                     okt = 0 ;
@@ -340,9 +347,11 @@ void cases ( )
                             }
                         }
                     }
+
                 }
                 if ( okk == 0 )
                 {
+                    okpaa = 1 ;
                    findPath ( aa , bb ) ;
                    if ( v [ bb ] == 1 )
                    {
